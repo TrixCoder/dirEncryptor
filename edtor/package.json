@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "name": "direncryptor",
+    "version": "0.0.1",
+    "description": "A basic directory encryptor",
+    "main": "index.js",
+    "dependencies": {
+        "folder-encrypt": "^1.1.7"
+    },
+    "engines": {
+        "node": "14.x"
+    }
+}
