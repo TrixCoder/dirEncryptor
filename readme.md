@@ -9,6 +9,7 @@
 * Now use `npm i` to install all required packages.
 * To install the other required packages for encryptor and decryptor we need to use `cd /edtor` to enter in edtor directory and use `npm i` again.
 * Again go back to the main directory of the project and use `node app.js` and answer the asked questions to encrypt or decrypt anything.
+---
 ## Conclusion:
 * We can easily encrypt or decrypt any folder or file but it has a limitation/problem that I am facing, i.e. if you try to decrypt a file/folder with wrong password then you may face some issues.
 * We can use any other modules for accepting user input.
