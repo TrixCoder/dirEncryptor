@@ -22,6 +22,7 @@ if (fs.existsSync(name)) {
 
         runScript('./edtor/decrypt.js', function (err) {
             if (err) throw err;
+            fs.rmdirSync(`./${name}`, { recursive: true });
             fs.rmdirSync(`./edtor/decrypt.js`, { recursive: true });
         });
     }
