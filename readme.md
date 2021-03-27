@@ -1,5 +1,5 @@
 # Directory Encryptor
-
+---
 ## Requirements:
 * Have node.js latest version installed [Guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * Open terminal and go to folder location where you downloaded the codes of dirEncryptor using `cd fileLocation`.
