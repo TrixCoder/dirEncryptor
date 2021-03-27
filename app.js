@@ -1,11 +1,15 @@
 const fs = require('fs');
 const prompt = require('prompt-sync')();
 var childProcess = require('child_process');
+let isErr = false;
 
 const name = prompt('What is your code folder/encrypted file name? - ');
 if (fs.existsSync(name)) {
     if (name.endsWith("encrypted")) {
         const pass = prompt('What should be password? - ');
+        if (fs.existsSync(`./edtor/decrypt.js`)) {
+            fs.rmdirSync(`./edtor/decrypt.js`, { recursive: true });
+        }
         var decrypt = fs.createWriteStream(`./edtor/decrypt.js`, {
             flags: 'a'
         });
@@ -21,13 +25,19 @@ if (fs.existsSync(name)) {
             + `});`);
 
         runScript('./edtor/decrypt.js', function (err) {
-            if (err) throw err;
-            fs.rmdirSync(`./${name}`, { recursive: true });
-            fs.rmdirSync(`./edtor/decrypt.js`, { recursive: true });
+            if (err) {
+                throw err;
+            }
+            //fs.rmdirSync(`./${name}`, { recursive: true });
+            //fs.rmdirSync(`./edtor/decrypt.js`, { recursive: true });
+
         });
     }
     else {
         const pass = prompt('What should be password? - ');
+        if (fs.existsSync(`./edtor/encrypt.js`)) {
+            fs.rmdirSync(`./edtor/encrypt.js`, { recursive: true });
+        }
         var encrypt = fs.createWriteStream(`./edtor/encrypt.js`, {
             flags: 'a'
         });
